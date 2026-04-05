@@ -1,0 +1,48 @@
+# Smart Study Planner - Project Roadmap & Architecture
+
+## 1. Project Phase: Foundation & Architecture
+*   **Folder Structure:** Setting up the Clean Architecture layers (Domain, Application, Infrastructure, WebAPI).
+*   **Domain Layer:** Defining core Entities (User, Subject, StudyPlan, StudySession) and Enums (Priority, SessionStatus).
+*   **Data Layer (Infrastructure):** EF Core configuration, Migrations, and Repository implementations.
+
+## 2. Project Phase: Core Logic (The "Smart" Part)
+*   **StudyPlannerService:** Implementing the weighted distribution algorithm based on priority and exam proximity.
+*   **ReschedulingService:** Building the logic to redistribute hours when sessions are missed or partially completed.
+*   **Validation:** Implementing FluentValidation for incoming DTOs.
+
+## 3. Project Phase: Infrastructure & Background Tasks
+*   **Hangfire Integration:** Setting up background jobs for daily reminders and auto-rescheduling triggers.
+*   **Notifications:** Implementing an abstraction for Email/Push notifications.
+
+## 4. Project Phase: API & Presentation
+*   **RESTful Endpoints:** Building the controllers for Subject Management, Plan Generation, and Session Tracking.
+*   **AutoMapper:** Mapping between Entities and DTOs.
+*   **Logging & Global Error Handling.**
+
+## 5. Project Phase: Advanced Features (Optional)
+*   Dashboard/Analytics logic.
+*   Pomodoro timer integration.
+
+---
+
+# Proposed Folder Structure (Clean Architecture)
+
+*   **src/SmartStudyPlanner.Domain**
+    *   Entities/
+    *   Enums/
+    *   Common/ (BaseEntity, etc.)
+*   **src/SmartStudyPlanner.Application**
+    *   Interfaces/
+    *   Services/ (StudyPlannerService, etc.)
+    *   DTOs/
+    *   Mappings/
+    *   Validators/
+*   **src/SmartStudyPlanner.Infrastructure**
+    *   Data/ (AppDbContext, Configurations)
+    *   Repositories/
+    *   Identity/
+    *   Services/ (EmailService, HangfireJobs)
+*   **src/SmartStudyPlanner.API**
+    *   Controllers/
+    *   Middleware/
+    *   Program.cs

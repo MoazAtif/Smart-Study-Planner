@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configure Your Study Plan - The Scholarly Horizon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .focus-shroud-dim {
+            background-color: #f7f9fb;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#51c0b3",
+                        "on-secondary-container": "#57657a",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed": "#89f5e7",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d5e3fc",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed": "#d5e3fc",
+                        "inverse-primary": "#bcc3ff",
+                        "secondary": "#515f74",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "primary-fixed": "#dfe0ff",
+                        "outline": "#767682",
+                        "on-primary-fixed": "#000d60",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-surface-variant": "#454651",
+                        "on-background": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-container": "#004b44",
+                        "on-primary-fixed-variant": "#333f91",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#bcc3ff",
+                        "on-tertiary-fixed": "#00201d",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#191c1e",
+                        "primary": "#142175",
+                        "surface-container": "#eceef0",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f7f9fb",
+                        "outline-variant": "#c6c5d3",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#9ea9ff",
+                        "surface-tint": "#4b57aa",
+                        "tertiary": "#00332e",
+                        "surface-dim": "#d8dadc",
+                        "primary-container": "#2e3a8c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<header class="w-full sticky top-0 z-40 bg-slate-50/85 dark:bg-slate-950/85 backdrop-blur-md">
+<div class="flex justify-between items-center px-6 py-3 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-400">The Scholarly Horizon</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-['Manrope'] font-medium text-sm text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors px-3 py-1 rounded-lg" href="#">Dashboard</a>
+<a class="font-['Manrope'] font-medium text-sm text-indigo-700 dark:text-indigo-300 border-b-2 border-indigo-700 px-3 py-1" href="#">Subjects</a>
+<a class="font-['Manrope'] font-medium text-sm text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors px-3 py-1 rounded-lg" href="#">Calendar</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="material-symbols-outlined text-slate-500 cursor-pointer p-2 hover:bg-slate-200/50 rounded-full transition-colors" data-icon="notifications">notifications</div>
+<div class="material-symbols-outlined text-slate-500 cursor-pointer p-2 hover:bg-slate-200/50 rounded-full transition-colors" data-icon="settings">settings</div>
+<img alt="Student Profile" class="w-10 h-10 rounded-full border-2 border-white" data-alt="Close up portrait of a young male student with a thoughtful expression in a library setting with soft background blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCERWKbU81wzrbiMw4iig7lWppPIv9epuH30Z14UySc6lF4Q1boi0hrBJf_b4cVH_Ee7MuQaCAZ6TrXTmh0s5woCRm568-3_A4BC13XflD9Pls0zm925LCm9nHkE-rB5gLZNp53Pfzd8W4ivn49bLH-SWxCz3NthAXzuT_0ETx2QM8ipNt28h35emsgVFifWK7IWHx9e93c8SKFQyv22ErKOLJ0ZM1O_GWn8SUBQ2Q3qcwTvuV9zfb9UNt7Xcdv3f1K68jExjdGzfE"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
+<!-- Left: Configuration Form -->
+<div class="flex-1 space-y-12">
+<div>
+<h1 class="font-headline font-extrabold text-4xl text-primary tracking-tight mb-2">Configure Your Study Plan</h1>
+<p class="text-secondary text-lg">Define your rhythm and let us build the optimal path to mastery.</p>
+</div>
+<!-- Section 1: Daily Availability -->
+<section class="space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">01 / DAILY AVAILABILITY</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+<!-- Weekday Inputs -->
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Mon</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="4"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Tue</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="4"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Wed</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="5"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Thu</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="4"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Fri</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="3"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Sat</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="2"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label font-semibold text-xs text-secondary-fixed-dim uppercase tracking-wider">Sun</label>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-2 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<input class="bg-transparent border-none p-0 w-full text-center font-headline font-bold text-2xl focus:ring-0 text-primary" type="number" value="2"/>
+<span class="text-[10px] text-outline font-bold">HRS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Start Date -->
+<section class="space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">02 / START DATE</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between max-w-md">
+<div class="flex items-center gap-4">
+<div class="bg-primary-container p-3 rounded-lg text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="font-label font-bold text-primary">Plan Commencement</p>
+<p class="text-xs text-secondary">Starting next Monday</p>
+</div>
+</div>
+<input class="bg-transparent border-none font-headline font-bold text-primary focus:ring-0 text-right" type="date" value="2023-11-20"/>
+</div>
+</section>
+<!-- Section 3: Preference Toggles -->
+<section class="space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">03 / PERFORMANCE PREFERENCES</span>
+</div>
+<div class="space-y-4 max-w-2xl">
+<!-- Toggle Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_12px_32px_-4px_rgba(20,33,117,0.08)] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="priority_high">priority_high</span>
+<div>
+<h3 class="font-headline font-bold text-on-surface">Focus on high-priority subjects first</h3>
+<p class="text-sm text-secondary">Optimize for exam deadlines and perceived difficulty.</p>
+</div>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative transition-colors">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+<!-- Toggle Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center justify-between opacity-80">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="weekend">weekend</span>
+<div>
+<h3 class="font-headline font-bold text-on-surface">Allow weekend studying</h3>
+<p class="text-sm text-secondary">Distribute light review sessions across Sat &amp; Sun.</p>
+</div>
+</div>
+<button class="w-12 h-6 bg-surface-container-high rounded-full relative transition-colors">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+<!-- Toggle Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_12px_32px_-4px_rgba(20,33,117,0.08)] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+<div>
+<h3 class="font-headline font-bold text-on-surface">Include Pomodoro breaks</h3>
+<p class="text-sm text-secondary">Automatic 5-min breaks every 25 mins of focus.</p>
+</div>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative transition-colors">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Preview Summary Sidebar -->
+<aside class="w-full lg:w-96">
+<div class="sticky top-24 space-y-8">
+<div class="bg-surface-container-low rounded-2xl p-8 space-y-6">
+<div>
+<h2 class="font-headline font-bold text-2xl text-primary mb-2">Plan Preview</h2>
+<p class="text-sm text-secondary leading-relaxed">Based on your availability, we have mapped out 24 total study hours per week.</p>
+</div>
+<!-- Distribution Chart/List -->
+<div class="space-y-6">
+<!-- Math -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-label font-bold text-on-surface">Mathematics</span>
+<span class="text-sm font-headline font-bold text-primary">15h <span class="text-xs text-secondary font-normal">/ 60%</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[60%] bg-gradient-to-r from-primary to-primary-container rounded-full"></div>
+</div>
+</div>
+<!-- CS -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-label font-bold text-on-surface">Computer Science</span>
+<span class="text-sm font-headline font-bold text-primary">10h <span class="text-xs text-secondary font-normal">/ 30%</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[30%] bg-gradient-to-r from-tertiary to-tertiary-fixed rounded-full"></div>
+</div>
+</div>
+<!-- Physics -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-label font-bold text-on-surface">Advanced Physics</span>
+<span class="text-sm font-headline font-bold text-primary">5h <span class="text-xs text-secondary font-normal">/ 10%</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[10%] bg-gradient-to-r from-secondary to-secondary-container rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Insights -->
+<div class="bg-white/50 p-4 rounded-xl border border-white/20">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="auto_awesome">auto_awesome</span>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">"Your schedule allows for deep work blocks on Wed &amp; Thu. We've prioritized high-difficulty topics during these slots."</p>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-headline font-extrabold tracking-tight hover:shadow-lg transition-all scale-98 active:opacity-90 flex items-center justify-center gap-2">
+                        Generate Smart Plan
+                        <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+<button class="w-full py-2 text-secondary text-sm font-medium hover:text-primary transition-colors">
+                        Reset to Defaults
+                    </button>
+</div>
+<!-- Decorative Asset -->
+<div class="relative h-48 rounded-2xl overflow-hidden group">
+<img alt="Studying context" class="w-full h-full object-cover" data-alt="Minimalist workspace with a clean wooden desk, an open book, a ceramic coffee cup, and soft morning sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzxo4UQihx1haS7sFCnwYA1Qwu07Dpiu3NiDysajX5vt_82a7GPfDxIMRWTQ1LrZZTdEBnxu5POWBaZNmrl_F60oi-3TFpYbsDEJVcQp7rCytEDrjdisxy6EnFuLO2rhdWCwlQGInPiZDSfOX_Yfuj7RueEU3G1yp4rwgh9watUCnAlq3T9yFiGTZZ430Po6g8vg6mWyo7qqCpK8FkB7_LrAdDUdOLoDm35M9Qe21M0KbIf2CxC_SFj4IUVo18zcrjiVVl6mVqUa8"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center p-6 text-center">
+<p class="text-white font-headline font-bold text-lg leading-snug">"Quality is not an act, it is a habit."</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Bottom Nav for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-slate-50/95 backdrop-blur-md px-6 py-3 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Dash</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-indigo-700">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Plan</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Cal</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Stats</span>
+</button>
+</nav>
+</body></html>
